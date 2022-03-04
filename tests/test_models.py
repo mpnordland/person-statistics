@@ -71,7 +71,6 @@ def test_deserialization():
 
     assert isinstance(user_list, dict) and user_list['results'] and len(user_list['results']) == 1
     user = user_list['results'][0]
-    print(user)
     assert isinstance(user, dict)
     assert user['first_name'] == 'brad'
     assert user['last_name'] == 'gibson'

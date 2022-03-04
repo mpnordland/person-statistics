@@ -5,7 +5,6 @@ test_small_json_blob = """
 """
 
 def close_enough(x, y, tolerance=0.001):
-    print(abs(x - y))
     return abs(x - y) < tolerance
 
 def test_percentage_female_v_male():
