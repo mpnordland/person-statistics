@@ -29,28 +29,36 @@ def percentage_last_name_start_a_n(users):
 
 def percentage_people_in_states(users):
     """
-     Percentage of people in each state, up to the top 10 most populous states
+     Percentage of total users that live in this state
+     At most ten of the states with the highest percentage will be returned
     """
-    counter = Counter([u['state'] for u in users])
-    return [(state[0], state[1] / len(users)) for state in counter.most_common(10)]
+    total_counter = Counter([u['state'] for u in  users])
+    return [(state[0], state[1] / len(users)) for state in total_counter.most_common(10)]
+
+def percentage_filtered_people_in_states(users, predicate):
+
+    total_counter = Counter([u['state'] for u in  users])
+    filtered_counter = Counter([u['state'] for u in filter(predicate, users)])
+    return [(state[0], state[1] / total_counter[state[0]]) for state in filtered_counter.most_common(10)]
+
 
 
 def percentage_females_in_states(users):
     """
-     Percentage of females in each state, up to the top 10 most populous states.
-     Top 10 most populous states will be states with highest female population, not total population.
+     Percentage of female users in each state compared to the total number of users residing in that state
+     At most ten of the states with the highest percentage will be returned
      
     """
-    return percentage_people_in_states(list(filter(is_female, users)))
+    return percentage_filtered_people_in_states(users, is_female)
 
 
 def percentage_males_in_states(users):
     """
-     Percentage of males in each state, up to the top 10 most populous states.
-     Top 10 most populous states will be states with highest male population, not total population.
+     Percentage of male users in each state compared to the total number of users residing in that state
+     At most ten of the states with the highest percentage will be returned
      
     """
-    return percentage_people_in_states(list(filter(is_male, users)))
+    return percentage_filtered_people_in_states(users, is_male)
 
 
 def percentage_people_in_age_ranges(users):
