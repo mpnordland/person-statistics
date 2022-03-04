@@ -18,11 +18,19 @@ def make_percentage_of_total(predicate, users):
 def percentage_female_v_male(users):
     return make_percentage_of_total(is_female, users)
 
-def percentage_first_name_start_a_n(users):
+def percentage_first_name_start_a_m(users):
+    """
+    returns percentage of users who's first name starts with a letter in the range A - M
+    Assumes all users have names that start with a character from the English alphabet
+    """
     return make_percentage_of_total(lambda u: name_starts_with_a_m(u['first_name']), users)
 
 
-def percentage_last_name_start_a_n(users):
+def percentage_last_name_start_a_m(users):
+    """
+    returns percentage of users who's last name starts with a letter in the range A - M
+    Assumes all users have names that start with a character from the English alphabet
+    """
     return make_percentage_of_total(lambda u: name_starts_with_a_m(u['last_name']), users)
 
 

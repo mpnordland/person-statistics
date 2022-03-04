@@ -27,8 +27,8 @@ def output_statistics():
 
     data = {
         "percentage_female_vs_male": percentage_female_v_male(users),
-        "percentage_first_name_start_a_n": percentage_first_name_start_a_n(users),
-        "percentage_last_name_start_a_n": percentage_last_name_start_a_n(users),
+        "percentage_first_name_start_a_n": percentage_first_name_start_a_m(users),
+        "percentage_last_name_start_a_n": percentage_last_name_start_a_m(users),
         "percentage_people_in_states": percentage_people_in_states(users),
         "percentage_females_in_states": percentage_females_in_states(users),
         "percentage_males_in_states": percentage_males_in_states(users),

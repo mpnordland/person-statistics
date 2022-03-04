@@ -17,14 +17,14 @@ def test_percentage_female_v_male():
 def test_percentage_first_name_start_a_n():
     users = UserListSchema().loads(test_small_json_blob)['results']
 
-    assert close_enough(percentage_first_name_start_a_n(users), 0.666)
+    assert close_enough(percentage_first_name_start_a_m(users), 0.666)
 
 
 
 def test_percentage_last_name_start_a_n():
     users = UserListSchema().loads(test_small_json_blob)['results']
 
-    assert close_enough(percentage_last_name_start_a_n(users), 0)
+    assert close_enough(percentage_last_name_start_a_m(users), 0)
 
 
 def test_percentage_people_in_states():
