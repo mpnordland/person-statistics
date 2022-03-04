@@ -53,7 +53,7 @@ def percentage_males_in_states(users):
     return percentage_people_in_states(list(filter(is_male, users)))
 
 
-def percentage_people_in_age_range(users, age_range):
+def percentage_people_in_age_ranges(users):
     counts = {
         range(21): 0, # 20 or under
         range(21, 41): 0, # 21 to 40 

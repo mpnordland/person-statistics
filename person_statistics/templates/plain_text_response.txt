@@ -1,0 +1,22 @@
+Percentage female versus male: {{ percentage_female_vs_male }}
+Percentage of first names that start with A-M versus N-Z: {{ percentage_first_name_start_a_n }}
+Percentage of last names that start with A-M versus N-Z: {{ percentage_last_name_start_a_n }}
+Percentage of people in each state, up to the top 10 most populous states: 
+{% for state, p in percentage_people_in_states %}
+    - {{ state }}: {{ p }}
+{% endfor %}
+
+Percentage of females in each state, up to the top 10 most populous states:
+{% for state, p in percentage_females_in_states %}
+    - {{ state }}: {{ p }}
+{% endfor %}
+
+Percentage of males in each state, up to the top 10 most populous states:
+{% for state, p in percentage_males_in_states %}
+    - {{ state }}: {{ p }}
+{% endfor %}
+
+Percentage of people in age ranges:
+{% for age_range, p in percentage_people_in_age_ranges.items() %}
+    - {{ age_range }}: {{ p }}
+{% endfor %}
